@@ -10,6 +10,7 @@
 
 int print_str(va_list args)
 {
+	(void)args;
 	/* the expression */
 
 	return (0);
