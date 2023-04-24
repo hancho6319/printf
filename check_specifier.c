@@ -20,13 +20,13 @@ int (*check_specifier(char *format))(va_list)
 	int i;
 
 	func_t array[4] = {
-		{'c', print_char},
-		{'s', print_str},
-		{'%', print_cent},
+		{"c", print_char},
+		{"s", print_str},
+		{"%", print_cent},
 		{NULL, NULL}};
 	for (i = 0; array[i].sp != NULL; i++)
 	{
-		if (array[i].sp == *format)
+		if (*(array[i].sp) == *format)
 		{
 			return (array[i].f);
 		}

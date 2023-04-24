@@ -2,13 +2,13 @@
 #include "main.h"
 
 /**
- * print_cent - the function for char % stdout
+ * print_str - the function for string stdout
  * @ars: variadic parameter
  *
  * Return: number of char printed
  */
 
-int print_cent(va_list args)
+int print_str(va_list args)
 {
 	/* the expression */
 

@@ -8,7 +8,10 @@
 
 int _printf(const char *format, ...);
 int (*check_specifier(char *format))(va_list);
-int print_char(va_list args);
+
+int print_char(va_list);
+int print_cent(va_list);
+int print_str(va_list);
 
 /*
  * struct fun - the struct fun for the specifiers
