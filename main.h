@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int (*check_specifier(char *format))(va_list);
+int (*check_specifier(const char *format))(va_list);
 
 int print_char(va_list);
 int print_cent(va_list);

@@ -18,7 +18,9 @@ int _printf(const char *format, ...)
 	int value = 0;
 
 	va_list args;
+
 	va_start(args, format);
+	int (*f)(va_list);
 
 	/* To prevent the program from parsing a null pointer */
 
@@ -41,7 +43,25 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '%')
 		{
-			/*Expression*/
+			f = check_specifier(&format[i + 1]);
+			if (f != NULL)
+			{
+				value = f(args);
+				count = count + value;
+				i = i + 2;
+				continue;
+			}
+			if (format[i + 1] == '\0')
+			{
+				break;
+			}
+			if (format[i + 1] != '\0')
+			{
+				value = write(1, &format[i], 1);
+				count += value;
+				i = i + 2;
+				continue;
+			}
 		}
 	}
 	return (count);
