@@ -1,6 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -16,22 +15,13 @@ int print_str(va_list);
 /*
  * struct fun - the struct fun for the specifiers
  * @sp: the char pointer for the comparing
- * 
- * Descriptions: This is struct used to
- * compare and handle the specifiers
+ * @f: the function handling the printing the specifier
+ *
+ * Description: Longer description
  */
-
-typedef struct fun
+typedef struct fun /* The func_t is the alias name of struct fun*/
 {
 	char *sp;
-
-	/**
-	 * @f: the function handling the printing the specifier
-	 *
-	 * Descriptions: This is struct used to
-	 * compare and handle the specifiers
-	 */
 	int (*f)(va_list);
-}func_t;
-
+} func_t;
 #endif

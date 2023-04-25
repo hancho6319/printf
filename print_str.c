@@ -3,7 +3,7 @@
 
 /**
  * print_str - the function for string stdout
- * @ars: variadic parameter
+ * @args: variadic parameter
  *
  * Return: number of char printed
  */
