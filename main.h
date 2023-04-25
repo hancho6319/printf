@@ -19,7 +19,8 @@ int print_str(va_list);
  *
  * Description: Longer description
  */
-typedef struct fun /* The func_t is the alias name of struct fun*/
+
+typedef struct fun
 {
 	char *sp;
 	int (*f)(va_list);
