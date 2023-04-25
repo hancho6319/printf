@@ -13,6 +13,9 @@
 
 int _printf(const char *format, ...)
 {
+	int (*f)(va_list);
+
+
 	int i = 0;
 	int count = 0;
 	int value = 0;
@@ -20,7 +23,6 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	int (*f)(va_list);
 
 	/* To prevent the program from parsing a null pointer */
 
