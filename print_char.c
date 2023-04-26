@@ -1,22 +1,21 @@
+#include <stdarg.h>
 #include <unistd.h>
 #include "main.h"
 
 /**
- * print_char - the function for char stdout
- * @args: variadic parameter
- *
- * Return: number of char printed
+ * print_char - the function to print char
+ * @args: list of the args
+ * @buffer: buffer array of the char
+ * @flags: the flags
+ * @pre: precision specification
+ * @size: size specifier
+ * Return: Number of the char printed
  */
 
-int print_char(va_list args)
+int print_char(va_list args, char buffer[], int flags,
+		int width, int pre, int size)
 {
-	char c = (char)va_arg(args, int);
-	int count = 0;
+	char c = va_arg(args, int);
 
-	if (c)
-	{
-		count = write(1, &c, 1);
-		return (count);
-	}
-	return (0);
+	return (handle_write_char(c, buffer, flags, width, pre, size));
 }
